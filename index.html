@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#101c20" />
+    <meta name="description" content="A procedural first-person bird-hunting game on a quiet mountain lake." />
+    <title>Lakefront — First-Person Hunt</title>
+  </head>
+  <body>
+    <main id="game">
+      <div id="scene" aria-label="3D lake and boat game"></div>
+
+      <header class="hud">
+        <div class="hud-brand"><span class="brand-mark">⌁</span><span>LAKEFRONT <small>FIELD RANGE</small></span></div>
+        <div class="hud-stats">
+          <div class="stat"><span>SCORE</span><strong id="score">00000</strong></div>
+          <div class="stat"><span>AMMO</span><strong class="ammo">∞ <small>UNL.</small></strong></div>
+        </div>
+        <button id="restart-button" class="restart-button" type="button">RESTART</button>
+        <button id="aim-toggle" class="aim-toggle" type="button" aria-pressed="true">
+          <span class="toggle-dot"></span><span>AIM ASSIST <b id="aim-state">ON</b></span>
+        </button>
+        <button id="sound-toggle" class="aim-toggle sound-toggle" type="button" aria-pressed="false" aria-label="Mute sound">
+          <span class="toggle-dot"></span><span>SOUND <b id="sound-state">ON</b></span>
+        </button>
+      </header>
+
+      <div class="reticle" aria-hidden="true"><i></i></div>
+      <div id="shot-feedback" class="shot-feedback" aria-live="polite"></div>
+
+      <section class="weapon-panel" aria-label="Weapon selection">
+        <span class="weapon-label">SELECT WEAPON <small>1 — 4</small></span>
+        <div id="weapon-list" class="weapon-list"></div>
+        <div class="weapon-current"><span id="weapon-icon">▰</span><span><small>ACTIVE WEAPON</small><strong id="weapon-name">Ranger</strong></span><b>∞</b></div>
+      </section>
+
+      <section id="mobile-controls" class="mobile-controls" aria-label="Touch controls">
+        <div id="joystick" class="joystick" aria-label="Movement joystick"><span id="joystick-knob"></span><small>MOVE</small></div>
+        <div class="mobile-actions">
+          <div id="mobile-guns" class="mobile-guns" aria-label="Select weapon"></div>
+          <button id="fire-button" class="fire-button" type="button">FIRE</button>
+        </div>
+      </section>
+
+      <div id="overlay" class="overlay">
+        <div class="overlay-card">
+          <div class="eyebrow"><span></span> PROCEDURAL LAKEFRONT RANGE</div>
+          <h1 id="overlay-title">TAKE THE<br /><em>SHOT.</em></h1>
+          <p id="overlay-copy">Settle into the boat. Track the birds. Make every shot count.</p>
+          <div class="instructions">
+            <div><kbd>W / S</kbd><span>Throttle · reverse</span></div>
+            <div><kbd>A / D</kbd><span>Steer the boat</span></div>
+            <div><kbd>MOUSE</kbd><span>Look around</span></div>
+            <div><kbd>CLICK / SPACE</kbd><span>Fire · R to reload</span></div>
+          </div>
+          <button id="start-button" class="start-button" type="button">PLAY <span>↗</span></button>
+          <button id="overlay-restart" class="overlay-restart" type="button" hidden>RESTART HUNT</button>
+          <p class="overlay-foot">MOBILE: USE THE JOYSTICK, DRAG TO LOOK, TAP FIRE</p>
+        </div>
+      </div>
+      <div class="bottom-hint"><span class="hint-dot"></span> OPEN WATER · CLEAR SKIES · WATCH THE RIDGELINE</div>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
